@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap');
+
+:root {
+  --bg: #070a12;
+  --bg2: #0b1020;
+  --panel: #101827;
+  --panel2: #151f33;
+  --text: #f8fafc;
+  --muted: #b9c4d6;
+  --gold: #d8b45f;
+  --gold2: #f5d993;
+  --blue: #7dd3fc;
+  --border: rgba(255,255,255,.1);
+  --shadow: 0 30px 90px rgba(0,0,0,.38);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: 74px;
+  padding: 0 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(7,10,18,.78);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  color: var(--gold2);
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .9rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .86rem;
+  font-weight: 700;
+}
+
+.nav a:hover {
+  color: var(--gold2);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 1.7rem;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 120px 7vw 80px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(125,211,252,.18), transparent 24%),
+    radial-gradient(circle at 90% 30%, rgba(216,180,95,.2), transparent 28%),
+    linear-gradient(135deg, #05070d 0%, #0b1020 48%, #05070d 100%);
+}
+
+.star-field,
+.star-field::before,
+.star-field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(#fff 1px, transparent 1px),
+    radial-gradient(var(--gold2) 1px, transparent 1px);
+  background-size: 80px 80px, 140px 140px;
+  background-position: 0 0, 40px 60px;
+  opacity: .18;
+  animation: starMove 55s linear infinite;
+}
+
+.star-field::before {
+  opacity: .13;
+  animation-duration: 85s;
+}
+
+.star-field::after {
+  opacity: .08;
+  animation-duration: 120s;
+}
+
+@keyframes starMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-260px); }
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 1100px;
+  text-align: center;
+  z-index: 2;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--gold2);
+  font-size: .78rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(4.2rem, 12vw, 10.5rem);
+  line-height: .86;
+  letter-spacing: -.065em;
+}
+
+.hero h1 span {
+  color: var(--gold2);
+}
+
+.hero-subtitle {
+  margin: 28px auto 0;
+  max-width: 820px;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 2.1vw, 1.45rem);
+}
+
+.hero-buttons {
+  margin-top: 38px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  border: 1px solid var(--border);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #111827;
+}
+
+.btn-glass {
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+}
+
+.down-arrow {
+  position: absolute;
+  bottom: 24px;
+  color: var(--gold2);
+  text-decoration: none;
+  font-size: 2.2rem;
+  animation: bounce 1.7s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(9px); }
+}
+
+.intro-block,
+.story-section,
+.timeline-section,
+.cards-section,
+.research-section,
+.projects-section,
+.publications-section,
+.conference-section,
+.scholarships-section,
+.experience-section,
+.people-section,
+.gallery-section,
+.contact-section {
+  padding: 100px 7vw;
+}
+
+.intro-block {
+  display: grid;
+  grid-template-columns: .9fr 1.35fr;
+  gap: 48px;
+  background: #0b1220;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.intro-block h2,
+.section-title h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  line-height: .98;
+  letter-spacing: -.04em;
+}
+
+.intro-block p,
+.section-title p {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.section-title {
+  max-width: 920px;
+  margin-bottom: 60px;
+}
+
+.chapter {
+  max-width: 1160px;
+  margin: 0 auto 86px;
+  padding-bottom: 86px;
+  display: grid;
+  grid-template-columns: 145px 1fr;
+  gap: 44px;
+  border-bottom: 1px solid var(--border);
+}
+
+.chapter-number {
+  color: rgba(216,180,95,.30);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 7rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.chapter-meta {
+  color: var(--gold2);
+  font-size: .78rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.chapter h3 {
+  margin: 8px 0 26px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.4rem, 5.3vw, 5rem);
+  line-height: .98;
+  letter-spacing: -.04em;
+}
+
+.chapter p {
+  color: #dce6f7;
+  font-size: 1.08rem;
+}
+
+blockquote {
+  margin: 34px 0;
+  padding: 30px;
+  color: white;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  background: rgba(216,180,95,.09);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 18px 18px 0;
+}
+
+blockquote span {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-family: Inter, Arial, sans-serif;
+  font-size: .92rem;
+}
+
+.rank-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.rank-strip span {
+  padding: 16px 10px;
+  text-align: center;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--gold2);
+  font-weight: 900;
+  box-shadow: 0 12px 35px rgba(0,0,0,.20);
+}
+
+.diploma-card {
+  margin: 40px 0;
+  padding: 42px;
+  color: #111827;
+  text-align: center;
+  border-radius: 26px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.98), rgba(245,217,147,.92)),
+    #fff;
+  box-shadow: var(--shadow);
+}
+
+.diploma-card h4 {
+  margin: 6px 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.diploma-card p {
+  color: #1f2937;
+  margin: 5px 0;
+}
+
+.diploma-card strong {
+  display: inline-block;
+  margin-top: 20px;
+  color: #6a4700;
+  letter-spacing: .08em;
+}
+
+.timeline {
+  max-width: 940px;
+  border-left: 2px solid rgba(216,180,95,.48);
+  margin-left: 18px;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 42px 38px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 7px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 8px rgba(216,180,95,.12);
+}
+
+.timeline-item span {
+  color: var(--gold2);
+  font-weight: 900;
+}
+
+.timeline-item p {
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+
+.card-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.card-grid.four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card-grid.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.info-card,
+.research-card,
+.project-item,
+.publication-card,
+.conference-card,
+.experience-item,
+.person-card {
+  padding: 30px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02)), var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 45px rgba(0,0,0,.20);
+}
+
+.info-card h3,
+.research-card h3,
+.project-item h3,
+.publication-card h3,
+.conference-card h3,
+.experience-item h3,
+.person-card h3 {
+  margin-top: 0;
+  color: var(--gold2);
+  line-height: 1.25;
+}
+
+.info-card p,
+.research-card p,
+.project-item p,
+.publication-card p,
+.conference-card p,
+.experience-item p,
+.person-card p {
+  color: var(--muted);
+}
+
+.project-list,
+.publication-list,
+.experience-list {
+  display: grid;
+  gap: 24px;
+  max-width: 1050px;
+}
+
+.publication-card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--gold2);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.publication-card a:hover {
+  text-decoration: underline;
+}
+
+.muted {
+  color: var(--gold2) !important;
+  font-weight: 700;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.photo-card {
+  min-height: 205px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 24px;
+  color: var(--gold2);
+  font-weight: 900;
+  background:
+    linear-gradient(135deg, rgba(216,180,95,.13), rgba(125,211,252,.08)),
+    var(--panel);
+  border: 1px dashed rgba(255,255,255,.24);
+}
+
+.cv-section {
+  margin: 40px 7vw 110px;
+  padding: 58px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(216,180,95,.18), rgba(125,211,252,.08)), var(--panel);
+  border: 1px solid var(--border);
+}
+
+.cv-section h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  line-height: 1;
+}
+
+.cv-section p {
+  color: var(--muted);
+  max-width: 850px;
+}
+
+.contact-card {
+  max-width: 980px;
+  margin: auto;
+  padding: 58px;
+  text-align: center;
+  border-radius: 32px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.contact-card h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+}
+
+.contact-card p {
+  color: var(--muted);
+}
+
+.contact-links {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  padding: 10px 15px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  color: var(--gold2);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.final-quote {
+  min-height: 78vh;
+  padding: 100px 7vw;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(216,180,95,.16), transparent 38%),
+    #05070d;
+}
+
+.final-quote blockquote {
+  max-width: 1100px;
+  margin: auto;
+  border: 0;
+  background: transparent;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 4.7vw, 4.5rem);
+  line-height: 1.12;
+}
+
+.final-quote p {
+  color: var(--gold2);
+  font-weight: 900;
+}
+
+.footer {
+  padding: 36px 7vw;
+  color: var(--muted);
+  text-align: center;
+  border-top: 1px solid var(--border);
+  font-size: .9rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1050px) {
+  .intro-block {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid.four,
+  .card-grid.three,
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
+  .site-header {
+    height: 68px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 7vw 26px;
+    background: rgba(7,10,18,.98);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .chapter {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .chapter-number {
+    font-size: 4.2rem;
+  }
+
+  .rank-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid.four,
+  .card-grid.three,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-block,
+  .story-section,
+  .timeline-section,
+  .cards-section,
+  .research-section,
+  .projects-section,
+  .publications-section,
+  .conference-section,
+  .scholarships-section,
+  .experience-section,
+  .people-section,
+  .gallery-section,
+  .contact-section {
+    padding: 80px 6vw;
+  }
+
+  .cv-section,
+  .contact-card {
+    padding: 36px 24px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
