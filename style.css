@@ -881,3 +881,32 @@ footer, .site-footer, .footer { color: #c2cad7 !important; }
 .family-photo-story > .section-title h3 { font-family: Georgia, serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 500; margin: .5rem 0 1rem; }
 .family-photo-gallery { margin-top: 1.5rem; }
 .family-photo-gallery .photo-card-real img { aspect-ratio: 4 / 5; object-fit: cover; object-position: center; }
+
+
+
+/* Reduce images woven into the story text only */
+.chapter-photo-inline {
+    max-width: 700px;
+    margin: 24px auto 30px;
+}
+
+.chapter-photo-inline img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Keep woven story images compact on phones */
+@media (max-width: 700px) {
+    .chapter-photo-inline {
+        max-width: 100%;
+        margin: 20px auto 24px;
+    }
+
+    .chapter-photo-inline img {
+        max-height: 300px;
+    }
+}
