@@ -836,7 +836,15 @@ footer, .site-footer, .footer { color: #c2cad7 !important; }
 .diploma-card p { color: #d6deea !important; }
 .diploma-card strong { color: #f2d995 !important; }
 .story-memory-photo { max-width: 820px; }
-.story-memory-photo img { max-height: 620px; object-fit: cover; }
+.story-memory-photo img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
+}
 .moscow-gallery .photo-card img { width:100%; aspect-ratio: 4/5; object-fit:cover; border-radius: 13px; }
 @media (max-width: 700px) { .story-memory-photo img { max-height: 500px; } }
 
@@ -881,3 +889,70 @@ footer, .site-footer, .footer { color: #c2cad7 !important; }
 .family-photo-story > .section-title h3 { font-family: Georgia, serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 500; margin: .5rem 0 1rem; }
 .family-photo-gallery { margin-top: 1.5rem; }
 .family-photo-gallery .photo-card-real img { aspect-ratio: 4 / 5; object-fit: cover; object-position: center; }
+
+
+/* ===== Responsive layout and horizontal overflow fix ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: clip;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+section,
+.container,
+.story-content,
+.story-section,
+.photo-card-real {
+  min-width: 0;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .container,
+  .story-content,
+  .story-section {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+  }
+
+  p {
+    max-width: 100%;
+  }
+}
