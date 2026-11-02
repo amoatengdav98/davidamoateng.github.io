@@ -35,8 +35,6 @@ The_Weight_of_Stars_Updated/
     └── *.mp4                  Documentary and graduation videos
 ```
 
-The `assets` directory is part of the website. Keep it alongside `index.html`; the page refers to the images, videos, and CV by their relative paths. Renaming or moving an asset without updating its reference in `index.html` will cause that item not to appear or play.
-
 ## Technology and design
 
 This is a static website built with HTML, CSS, and JavaScript. It does not require a database, server-side application, package installation, or build process. The CSS provides the visual design and responsive layouts, while the JavaScript supports lightweight interface behaviour. Some externally hosted typography may require an internet connection. Local photographs, videos, and the CV are served from the `assets` folder.
@@ -51,9 +49,14 @@ The site includes personal photographs of family and friends. These images are p
 
 ## Research and profile links
 
+- **Personal Website:** https://davidamoateng.com
 - **LinkedIn:** https://www.linkedin.com/in/david-amoateng-719a52205
+- **Google Scholar:** https://scholar.google.com/citations?user=4EQgxMYAAAAJ&hl=en
+- **ORCID:** https://orcid.org/0009-0002-8027-891X
 - **ResearchGate:** https://www.researchgate.net/profile/David-Amoateng-3
-- **GitHub Pages project:** https://amoatengdav98.github.io/davidamoateng.github.io/#story
+- **GitHub Profile:** https://github.com/amoatengdav98
+- **GitHub Pages Project:** https://amoatengdav98.github.io/davidamoateng.github.io/#story
+- **Website Repository:** https://github.com/amoatengdav98/davidamoateng.github.io
 
 ## Credits and ownership
 
