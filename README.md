@@ -21,7 +21,7 @@ The website is designed as a long-form personal documentary rather than a conven
 
 ## Project files
 
-```text
+text
 The_Weight_of_Stars_Updated/
 ├── index.html                 Main website and documentary content
 ├── style.css                  Layout, typography, colours, responsive styling, and animations
@@ -33,9 +33,6 @@ The_Weight_of_Stars_Updated/
     ├── *.webp                 Optimised photographs
     ├── *.jpeg                 Graduation and family photographs
     └── *.mp4                  Documentary and graduation videos
-```
-
-The `assets` directory is part of the website. Keep it alongside `index.html`; the page refers to the images, videos, and CV by their relative paths. Renaming or moving an asset without updating its reference in `index.html` will cause that item not to appear or play.
 
 ## Technology and design
 
