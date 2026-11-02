@@ -21,7 +21,7 @@ The website is designed as a long-form personal documentary rather than a conven
 
 ## Project files
 
-text
+```text
 The_Weight_of_Stars_Updated/
 ├── index.html                 Main website and documentary content
 ├── style.css                  Layout, typography, colours, responsive styling, and animations
