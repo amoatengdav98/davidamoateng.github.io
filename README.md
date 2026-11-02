@@ -33,6 +33,7 @@ The_Weight_of_Stars_Updated/
     ├── *.webp                 Optimised photographs
     ├── *.jpeg                 Graduation and family photographs
     └── *.mp4                  Documentary and graduation videos
+```
 
 ## Technology and design
 
